@@ -65,7 +65,7 @@ async function processArray(array, author){
 
     //remove quotes from other authors
     const filtered = await flattened.filter(quote=>{
-      return quote.includes("― "+formattedAuthor);
+      return quote.toLowerCase().includes("― "+formattedAuthor.toLowerCase());
     });
 
     const formatted = await filtered.map(quote=>{
